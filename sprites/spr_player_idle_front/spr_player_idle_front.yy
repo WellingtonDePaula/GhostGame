@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "spr_player_idle_front",
   "bbox_bottom": 23,
-  "bbox_left": 8,
-  "bbox_right": 15,
+  "bbox_left": 7,
+  "bbox_right": 16,
   "bbox_top": 19,
   "bboxMode": 2,
   "collisionKind": 1,
@@ -27,7 +27,7 @@
   "origin": 9,
   "parent": {
     "name": "body alive",
-    "path": "folders/Sprites/player/body alive.yy",
+    "path": "folders/Sprites/entities/player/body alive.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

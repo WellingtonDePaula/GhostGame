@@ -29,7 +29,7 @@
   "origin": 9,
   "parent": {
     "name": "ghost body",
-    "path": "folders/Sprites/player/ghost body.yy",
+    "path": "folders/Sprites/entities/player/ghost body.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

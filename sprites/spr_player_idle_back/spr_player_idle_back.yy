@@ -27,7 +27,7 @@
   "origin": 9,
   "parent": {
     "name": "body alive",
-    "path": "folders/Sprites/player/body alive.yy",
+    "path": "folders/Sprites/entities/player/body alive.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

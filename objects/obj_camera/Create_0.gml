@@ -1,0 +1,10 @@
+resolution_width = 640;
+resolution_height = 480;
+resolution_scale = 6;
+global.view_width = resolution_width/resolution_scale;
+global.view_height = resolution_height/resolution_scale;
+view_target = global.controlled_object;
+cam_x = 0;
+cam_y = 0;
+window_set_size(global.view_width*resolution_scale, global.view_height*resolution_scale);
+surface_resize(application_surface, global.view_width*resolution_scale, global.view_height*resolution_scale);

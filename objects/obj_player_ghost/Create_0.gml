@@ -27,3 +27,5 @@ image_rotate_tol = 1;
 image_rotate_frac = .27
 
 image_alpha = .7;
+
+global.controlled_object = obj_player_ghost;

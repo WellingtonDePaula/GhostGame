@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "body alive",
-    "path": "folders/Scripts/player/body alive.yy",
+    "path": "folders/Scripts/entities/player/body alive.yy",
   },
 }

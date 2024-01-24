@@ -3,18 +3,25 @@ function scr_player_ghost_state_free() {
 	
 	vel = 2;
 	
-	if(velh == 0 && velv == 0) {
+	right = keyboard_check(inputs.right);
+	left = keyboard_check(inputs.left);
+	down = keyboard_check(inputs.down);
+	up = keyboard_check(inputs.up);
+	space = keyboard_check_pressed(inputs.space);
+	
+	var dir, keys;
+	
+	dir = point_direction(0, 0, right-left, down-up);
+	keys = right-left != 0 || down - up != 0;
+	
+	velh = lerp(velh, lengthdir_x(vel * keys, dir), .14);
+	velv = lerp(velv, lengthdir_y(vel * keys, dir), .14);
+	
+	if(velh == 0 && velv == 0 || !keys) {
 		sprite_index = spr_player_ghost_idle;
 	}
-	if(velh !=0 || velv != 0) {
-		
-		if(image_index >= sprite_get_number(sprite_index)-1) {
-			image_index = sprite_get_number(sprite_index)-1;
-		}
-		
-		sprite_index = spr_player_ghost_moving;
-		
-		var dir = point_direction(0, 0, right-left, down-up);
+	
+	if(keys) {
 		var ad = angle_difference(dir, image_dir);
 		
 		if(abs(ad) <= image_rotate_tol) {
@@ -22,22 +29,16 @@ function scr_player_ghost_state_free() {
 		} else {
 		    image_dir += ad*image_rotate_frac;
 		}
-		
 	}
 	
-	right = keyboard_check(inputs.right);
-	left = keyboard_check(inputs.left);
-	down = keyboard_check(inputs.down);
-	up = keyboard_check(inputs.up);
-	space = keyboard_check_pressed(inputs.space);
-	
-	var move_dir, keys;
-	
-	move_dir = point_direction(0, 0, right-left, down-up);
-	keys = right-left != 0 || down - up != 0;
-	
-	velh = lengthdir_x(vel * keys, move_dir);
-	velv = lengthdir_y(vel * keys, move_dir);
+	if(velh != 0 || velv != 0 && keys) {
+		sprite_index = spr_player_ghost_moving;
+		
+		if(image_index >= sprite_get_number(sprite_index)-1) {
+			image_index = sprite_get_number(sprite_index)-1;
+		}
+		
+	}
 	
 	if(point_distance(x + velh, y + velv, body.x, body.y) >= max_dist) {
 		velh = 0;
@@ -49,13 +50,17 @@ function scr_player_ghost_state_free() {
 	if(space) {
 		image_index = 0;
 		state = scr_player_ghost_state_return;
+		dir = point_direction(x, y, body.x, body.y);
 		velh = 0;
 		velv = 0;
+		image_dir = dir;
 	}
 }
 
 function scr_player_ghost_state_return() {
 	debug_state = "Return";
+	
+	global.controlled_object = obj_player;
 	
 	vel = 10;
 	
@@ -68,12 +73,7 @@ function scr_player_ghost_state_return() {
 		if(image_index >= sprite_get_number(sprite_index)-1) {
 			image_index = sprite_get_number(sprite_index)-1;
 		}
-		
 		sprite_index = spr_player_ghost_moving;
-		
-		dir = point_direction(x, y, body.x, body.y);
-		
-		image_dir = dir;
 		
 		if(velh > 0) {
 			image_xscale = 1;

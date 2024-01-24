@@ -39,3 +39,5 @@ dash_dir = 0;
 dash_force = 4;
 dash_time = 0;
 dash_distance = 8;
+
+global.controlled_object = obj_player;

@@ -26,10 +26,10 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3e823d52-3ef0-4b25-b6aa-d98deadbf291","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "body alive",
-    "path": "folders/Sprites/player/body alive.yy",
+    "path": "folders/Sprites/entities/player/body alive.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -66,7 +66,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 12,
-    "yorigin": 13,
+    "yorigin": 12,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

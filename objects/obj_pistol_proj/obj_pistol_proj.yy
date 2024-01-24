@@ -3,7 +3,6 @@
   "resourceVersion": "1.0",
   "name": "obj_pistol_proj",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
@@ -12,7 +11,10 @@
     "name": "pistol",
     "path": "folders/Objetos/weapons/pistol.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_proj",
+    "path": "objects/obj_proj/obj_proj.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

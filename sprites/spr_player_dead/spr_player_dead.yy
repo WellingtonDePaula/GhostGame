@@ -28,7 +28,7 @@
   "origin": 9,
   "parent": {
     "name": "body alive",
-    "path": "folders/Sprites/player/body alive.yy",
+    "path": "folders/Sprites/entities/player/body alive.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -49,7 +49,7 @@
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
-    "playbackSpeed": 5.0,
+    "playbackSpeed": 8.0,
     "playbackSpeedType": 0,
     "showBackdrop": true,
     "showBackdropImage": false,

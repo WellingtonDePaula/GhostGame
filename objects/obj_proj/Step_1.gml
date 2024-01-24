@@ -3,6 +3,6 @@ if(instance_place(x, y, [obj_wall, obj_border_limit])) {
 }
 else
 {
-	sprite_index = spr_pistol_proj;
+	sprite_index = proj_sprite;
 	image_angle -= rotate_force;
 }
