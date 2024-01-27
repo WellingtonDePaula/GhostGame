@@ -4,10 +4,18 @@ if(instance_exists(weapon_id)) {
 	y = weapon_id.y + 2;
 	
 	var ad = angle_difference(weapon_dir, image_angle);
-	if(abs(ad) <= weapon_rotate_tol) {
-		image_angle = weapon_dir;
+	if(global.can_shoot) {
+		if(abs(ad) <= weapon_rotate_tol) {
+			image_angle = weapon_dir;
+		} else {
+			image_angle += ad*weapon_rotate_frac;
+		}
 	} else {
-		image_angle += ad*weapon_rotate_frac;
+		if(abs(ad) <= weapon_recoil_rotate_tol) {
+			image_angle = weapon_dir;
+		} else {
+			image_angle += ad*weapon_recoil_rotate_frac;
+		}
 	}
 	
 	if(weapon_id.state != scr_player_state_dead_return)
@@ -48,23 +56,37 @@ if(instance_exists(weapon_id)) {
 	image_yscale = weapon_id.image_xscale;
 	
 	function fire() {
-		var bullet_x = (weapon_x + weapon_offset_x*dcos(weapon_dir) + weapon_offset_y*dsin(weapon_dir));
-		var bullet_y = (weapon_y + weapon_offset_y*dcos(weapon_dir) - weapon_offset_x*dsin(weapon_dir));
+		if(ammo > 0) {
+			if(global.can_shoot) {
+				image_angle += recoil_force*image_yscale;
+			
+				var bullet_x = (weapon_x + weapon_offset_x*dcos(weapon_dir) + weapon_offset_y*dsin(weapon_dir));
+				var bullet_y = (weapon_y + weapon_offset_y*dcos(weapon_dir) - weapon_offset_x*dsin(weapon_dir));
 		
-		var burst = instance_create_layer((bullet_x + 5*dcos(weapon_dir) + weapon_offset_y*dsin(weapon_dir)) + 5* sign(weapon_id.velh), (bullet_y + weapon_offset_y*dcos(weapon_dir) - 5*dsin(weapon_dir)) + 5* sign(weapon_id.velv), "Projectiles", obj_pistol_burst);
-		burst.image_angle = weapon_dir;
-		burst.image_index = 0;
+				var burst = instance_create_layer((bullet_x + 5*dcos(weapon_dir) + weapon_offset_y*dsin(weapon_dir)) + 5* sign(weapon_id.velh), (bullet_y + weapon_offset_y*dcos(weapon_dir) - 5*dsin(weapon_dir)) + 5* sign(weapon_id.velv), "Projectiles", obj_pistol_burst);
+				burst.image_angle = weapon_dir;
+				burst.image_index = 0;
 		
-		var proj = instance_create_layer(bullet_x, bullet_y, "Projectiles", obj_pistol_proj);
-		proj.speed = 4.5;
-		proj.image_angle = weapon_dir;
-		proj.direction = weapon_dir;
+				var proj = instance_create_layer(bullet_x, bullet_y, "Projectiles", obj_pistol_proj);
+				proj.speed = 4.5;
+				proj.image_angle = weapon_dir;
+				proj.direction = weapon_dir;
 		
-		alarm[0] = fire_cooldown;
+				alarm[0] = fire_cooldown;
 		
-		global.can_shoot = false;
+				global.can_shoot = false;
+			
+				ammo--;
+			}
+		} else {
+			if(global.can_shoot) {
+				sprite_index = spr_pistol_no_ammo;
+				alarm[1] = 5;
+				alarm[0] = fire_cooldown;
+				global.can_shoot = false;
+			}
+		}
 	}
-	
 } else {
 	instance_destroy();
 }

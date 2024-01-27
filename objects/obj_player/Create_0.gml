@@ -27,7 +27,7 @@ inputs = {
 }
 
 //variáveis da arma do player
-
+my_weapon = -1;
 my_weapon = instance_create_layer(x, y, "Guns", obj_pistol);
 my_weapon.weapon_id = self;
 global.can_shoot = true;
@@ -41,3 +41,7 @@ dash_time = 0;
 dash_distance = 8;
 
 global.controlled_object = obj_player;
+
+//variáveis dos itens do player
+//max_to_select = 1;
+//selected = 0;

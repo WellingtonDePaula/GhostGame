@@ -1,5 +1,5 @@
-resolution_width = 640;
-resolution_height = 480;
+resolution_width = 1280;
+resolution_height = 720;
 resolution_scale = 6;
 global.view_width = resolution_width/resolution_scale;
 global.view_height = resolution_height/resolution_scale;
@@ -8,3 +8,4 @@ cam_x = 0;
 cam_y = 0;
 window_set_size(global.view_width*resolution_scale, global.view_height*resolution_scale);
 surface_resize(application_surface, global.view_width*resolution_scale, global.view_height*resolution_scale);
+display_set_gui_size(global.view_width*resolution_scale, global.view_height*resolution_scale);

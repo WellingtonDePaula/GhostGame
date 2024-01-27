@@ -56,5 +56,6 @@
     {"name":"spr_player_dead_return","order":5,"path":"sprites/spr_player_dead_return/spr_player_dead_return.yy",},
     {"name":"obj_weapon","order":2,"path":"objects/obj_weapon/obj_weapon.yy",},
     {"name":"spr_pistol_proj","order":1,"path":"sprites/spr_pistol_proj/spr_pistol_proj.yy",},
+    {"name":"spr_pistol_no_ammo","order":3,"path":"sprites/spr_pistol_no_ammo/spr_pistol_no_ammo.yy",},
   ],
 }

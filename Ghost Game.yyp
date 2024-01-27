@@ -93,6 +93,7 @@
     {"id":{"name":"scr_square_states","path":"scripts/scr_square_states/scr_square_states.yy",},},
     {"id":{"name":"spr_square","path":"sprites/spr_square/spr_square.yy",},},
     {"id":{"name":"spr_pistol_proj","path":"sprites/spr_pistol_proj/spr_pistol_proj.yy",},},
+    {"id":{"name":"spr_pistol_no_ammo","path":"sprites/spr_pistol_no_ammo/spr_pistol_no_ammo.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [

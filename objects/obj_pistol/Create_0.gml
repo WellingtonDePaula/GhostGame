@@ -7,3 +7,7 @@ weapon_velh = 0;
 weapon_velv = 0;
 weapon_rotate_tol = 1;
 weapon_rotate_frac = .4;
+weapon_recoil_rotate_tol = 1;
+weapon_recoil_rotate_frac = .2;
+ammo = 5;
+recoil_force = 20;

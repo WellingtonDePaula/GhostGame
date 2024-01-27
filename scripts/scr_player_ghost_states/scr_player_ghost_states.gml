@@ -93,6 +93,10 @@ function scr_player_ghost_state_return() {
 		image_alpha -= .1;
 		if(image_alpha <= 0)
 		{
+			//if(body.my_weapon != -1) {
+			//	body.my_weapon.weapon_velh = 0;
+			//	body.my_weapon.weapon_velv = 0;
+			//}
 			body.my_weapon.weapon_velh = 0;
 			body.my_weapon.weapon_velv = 0;
 			body.state = scr_player_state_dead_return;
