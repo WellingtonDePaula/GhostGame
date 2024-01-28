@@ -1,4 +1,5 @@
-script_execute(state);
-if(keyboard_check_pressed(ord("R"))) {
-	room_restart();
+if(!global.pause) {
+	script_execute(state);
+} else {
+	can_dash = true;
 }

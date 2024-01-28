@@ -2,11 +2,12 @@ event_inherited();
 
 state = scr_player_state_free;
 
-depth = -10;
+//depth = -10;
 
 ghost = obj_player_ghost;
 
 vel = 1.5;
+move_dir = 0;
 
 right = 0;
 left = 0;

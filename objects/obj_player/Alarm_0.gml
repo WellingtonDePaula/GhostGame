@@ -1,1 +1,3 @@
-can_dash = true;
+if(!global.pause) {
+	can_dash = true;
+}

@@ -5,34 +5,6 @@ function scr_player_state_free() {
 	
 	scr_player_fix_sprites();
 	
-	//tool select system //////////////////
-	
-	//if(mouse_wheel_up()) {
-	//	selected+=1;
-	//} else {
-	//	if(mouse_wheel_down()) {
-	//		selected-=1;
-	//	}
-	//}
-	//if(selected <= -1) {
-	//	selected = max_to_select;
-	//}
-	//if(selected >= max_to_select+1) {
-	//	selected = 0;
-	//}
-	//if(selected == 0) {
-	//	if(my_weapon != -1) {
-	//		instance_destroy(my_weapon);
-	//	}
-	//}
-	//if(selected == 1 && !instance_exists(obj_pistol)) {
-	//	my_weapon = instance_create_layer(x, y, "Guns", obj_pistol);
-	//	my_weapon.weapon_id = self;
-	//	global.can_shoot = true;
-	//}
-	
-	//////////////////////////////////////////////////////////////
-	
 	right = keyboard_check(inputs.right);
 	left = keyboard_check(inputs.left);
 	down = keyboard_check(inputs.down);
@@ -41,10 +13,8 @@ function scr_player_state_free() {
 	left_mouse = mouse_check_button_pressed(inputs.left_mouse);
 	shift = keyboard_check_pressed(inputs.shift);
 	
-	var move_dir, keys;
-	
 	move_dir = point_direction(0, 0, right-left, down-up);
-	keys = right-left != 0 || down - up != 0;
+	var keys = right-left != 0 || down - up != 0;
 	
 	velh = lengthdir_x(vel * keys, move_dir);
 	velv = lengthdir_y(vel * keys, move_dir);
@@ -70,12 +40,6 @@ function scr_player_state_free() {
 	if(my_weapon != -1) {
 		with(my_weapon) {
 			weapon_dir = point_direction(x, y, mouse_x, mouse_y);
-			if(weapon_dir > 0 && weapon_dir < 180) {
-				depth = max_depth;
-			}
-			if(weapon_dir > 180 && weapon_dir < 360) {
-				depth = min_depth;
-			}
 			if(other.left_mouse) {
 				fire();
 			}

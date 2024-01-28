@@ -14,3 +14,7 @@ alarm[0] = 1;
 
 collision_mask = instance_create_layer(x, y, "Enemies", obj_enemy_yuzan_collision_mask);
 collision_mask.body_id = self;
+
+hit_delay = 7;
+
+len = 0;

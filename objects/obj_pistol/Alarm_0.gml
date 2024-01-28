@@ -1,1 +1,3 @@
-global.can_shoot = true;
+if(!global.pause) {
+	global.can_shoot = true;
+}

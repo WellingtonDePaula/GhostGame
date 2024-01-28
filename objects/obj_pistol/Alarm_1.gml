@@ -1,1 +1,3 @@
-sprite_index = spr_pistol;
+if(!global.pause) {
+	sprite_index = spr_pistol;
+}

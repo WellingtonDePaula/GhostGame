@@ -2,7 +2,7 @@ event_inherited();
 
 state = scr_player_ghost_state_free;
 
-depth = -100
+//depth = -100
 
 vel = 2;
 
