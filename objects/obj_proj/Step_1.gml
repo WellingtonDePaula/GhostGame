@@ -1,7 +1,9 @@
+
 depth = -y;
 var col = instance_place(x, y, obj_enemy);
 
 if(col && col.dead) {
+	audio_play_sound(s_hit, 1, false);
 	speed = 0;
 	col.hit = true;
 	col.alarm[1] = col.hit_delay;

@@ -18,3 +18,5 @@ collision_mask.body_id = self;
 hit_delay = 7;
 
 len = 0;
+
+carried = false;

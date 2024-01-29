@@ -7,3 +7,6 @@ with(obj_player_ghost) {
 }
 draw_set_font(-1);
 draw_set_color(-1);
+
+//mostra range de puxar objetos
+//draw_circle(x, y, d_range, true);

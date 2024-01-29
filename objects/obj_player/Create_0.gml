@@ -25,6 +25,7 @@ inputs = {
 	space: vk_space,
 	left_mouse: mb_left,
 	shift: vk_shift,
+	e: ord("E"),
 }
 
 //variáveis da arma do player
@@ -46,3 +47,12 @@ global.controlled_object = obj_player;
 //variáveis dos itens do player
 //max_to_select = 1;
 //selected = 0;
+
+//variáveis do gui do player
+x_bala = 40;
+y_bala = display_get_gui_height() - 20;
+x_contagem_balas = 105;
+y_contagem_balas =  display_get_gui_height() - 25;
+
+//variaveis para puxar objetos
+d_range = 8;

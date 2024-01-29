@@ -54,6 +54,8 @@ function scr_yuzan_state_moving() {
 function scr_yuzan_state_chasing() {
 	debug_state = "Chasing";
 	
+	sprite_index = spr_yuzan_moving_front;
+	
 	scr_enemy_fix_sprites(spr_yuzan_idle_front, spr_yuzan_idle_back, spr_yuzan_moving_front, spr_yuzan_moving_back);
 	
 	vel = .8;
@@ -87,26 +89,5 @@ function scr_yuzan_state_dead() {
 		image_index = sprite_get_number(sprite_index)-1;
 	}
 	
-	//var col = instance_place(x, y, obj_player);
-	
-	//with(col) {
-	//	var push_list = ds_list_create();
-	//	var is_block_h = instance_place_list(x+velh, y, other, push_list, false);
-			
-	//	if(is_block_h) {
-	//		if(is_block_h) {
-	//			if(ds_list_size(push_list) > 0) {
-	//				for(var i = 0; i < ds_list_size(push_list); i++) {
-	//					var block = push_list[| i];
-	//					with(block) {
-	//						if(!place_meeting(x+other.velh, y, [obj_wall, obj_border_limit])) {
-	//							x+=other.velh;
-	//						}
-	//					}
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
 	move_and_collide(velh, velv, [obj_wall, obj_border_limit]);
 }

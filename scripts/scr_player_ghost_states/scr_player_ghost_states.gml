@@ -45,6 +45,58 @@ function scr_player_ghost_state_free() {
 		velv = 0;
 	}
 	
+	//Fazendo com que o player não fique dentro das paredes
+	if(place_meeting(x, y, [obj_wall, obj_border_limit])) {
+		for(var i = 0; i < 1000; i++) {
+			//direita
+			if(!place_meeting(x + i, y, obj_border_limit)) {
+				x+=i;
+				break;
+			}
+			//esquerda
+			if(!place_meeting(x - i, y, obj_border_limit)) {
+				x-=i;
+				break;
+			}
+			//cima
+			if(!place_meeting(x, y - i, obj_border_limit)) {
+				y-=i;
+				break;
+			}
+			//baixo
+			if(!place_meeting(x, y + i, obj_border_limit)) {
+				y+=i;
+				break;
+			}
+			
+			////////////////////////////////////
+			
+			//cima direita
+			if(!place_meeting(x + i, y - i, obj_border_limit)) {
+				x+=i;
+				y-=i;
+				break;
+			}
+			//cima esquerda
+			if(!place_meeting(x - i, y - i, obj_border_limit)) {
+				x-=i;
+				y-=i;
+				break;
+			}
+			//baixo direita
+			if(!place_meeting(x + i, y + i, obj_border_limit)) {
+				x+=i;
+				y+=i;
+				break;
+			}
+			//baixo esquerda
+			if(!place_meeting(x - i, y + i, obj_border_limit)) {
+				x-=i;
+				y+=i;
+				break;
+			}
+		}
+	}
 	move_and_collide(velh, velv, obj_border_limit);
 	
 	if(space) {
@@ -65,6 +117,9 @@ function scr_player_ghost_state_return() {
 	vel = 10;
 	
 	var dir = point_direction(x, y, body.x, body.y);
+	if(!rectangle_in_rectangle(body.bbox_left, body.bbox_top, body.bbox_right, body.bbox_bottom, bbox_left, bbox_top, bbox_right, bbox_bottom)) {
+		image_dir = dir;
+	}
 		
 	velh = lerp(velh, lengthdir_x(vel, dir), .05);
 	velv = lerp(velv, lengthdir_y(vel, dir), .05);

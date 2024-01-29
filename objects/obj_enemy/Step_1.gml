@@ -6,6 +6,7 @@ if(!global.pause) {
 		if(col) {
 			if(!other.hit) {
 				if(!other.dead) {
+					audio_play_sound(s_hit, 1, false);
 					other.hp -= col.damage;
 					other.hit = true;
 					other.alpha = 1;

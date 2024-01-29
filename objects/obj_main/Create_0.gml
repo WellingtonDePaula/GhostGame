@@ -2,13 +2,5 @@ global.font1 = font_add_sprite_ext(spr_font1, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefg
 global.pause = false;
 can_pause = true;
 
-//menu de pause
-options_state = "";
-pause_options = ["Return", "Options", "Quit"];
-pause_op_max = array_length(pause_options);
-pause_index = 0;
-
-//menu de opções
-op_options = ["Resolution:", "1280x720", "1920x1080", "2560x1440"];
-op_max = array_length(op_options);
-op_index = 1;
+layer_enable_fx("Pause_Background", false);
+layer_depth(layer_get_id("Pause_Background"), -room_height-10);

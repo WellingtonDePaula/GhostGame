@@ -28,10 +28,9 @@ if(!global.pause) {
 			}
 		}
 	
-		if(weapon_id.state != scr_player_state_dead_return)
-		{
-		weapon_x = x + lengthdir_x(6, weapon_dir);
-		weapon_y = y + lengthdir_y(0, weapon_dir);
+		if(weapon_id.state != scr_player_state_dead_return) {
+			weapon_x = x + lengthdir_x(6, weapon_dir);
+			weapon_y = y + lengthdir_y(0, weapon_dir);
 		}
 	
 		if(weapon_id.state == scr_player_state_dead) {
