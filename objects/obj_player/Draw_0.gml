@@ -9,4 +9,4 @@ draw_set_font(-1);
 draw_set_color(-1);
 
 //mostra range de puxar objetos
-//draw_circle(x, y, d_range, true);
+draw_circle(x-1, y+5, d_range, true);

@@ -1,14 +1,9 @@
 if(!global.pause) {
 	if(instance_exists(weapon_id)) {
 		
-		//depth = -y;
-		
 		if(weapon_dir > 0 && weapon_dir < 180) {
 			depth += 2;
 		}
-		//if(weapon_dir > 180 && weapon_dir < 360) {
-		//	depth -= 5;
-		//}
 	
 		x = weapon_id.x;
 		y = weapon_id.y + 2;
@@ -29,8 +24,8 @@ if(!global.pause) {
 		}
 	
 		if(weapon_id.state != scr_player_state_dead_return) {
-			weapon_x = x + lengthdir_x(6, weapon_dir);
-			weapon_y = y + lengthdir_y(0, weapon_dir);
+			weapon_x = x + lengthdir_x(len_x, dir_x_y);
+			weapon_y = y + lengthdir_y(len_y, dir_x_y);
 		}
 	
 		if(weapon_id.state == scr_player_state_dead) {

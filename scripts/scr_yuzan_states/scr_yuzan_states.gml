@@ -61,19 +61,28 @@ function scr_yuzan_state_chasing() {
 	vel = .8;
 	
 	var dir = point_direction(x, y, obj_player.x, obj_player.y);
+	var dist = point_distance(x, y, obj_player.x, obj_player.y);
 	
-	velh = lengthdir_x(vel, dir);
-	velv = lengthdir_y(vel, dir);
+	if(dist > 1) {
+		velh = lengthdir_x(vel, dir);
+		velv = lengthdir_y(vel, dir);
+	} else {
+		velh = 0;
+		velv = 0;
+	}
 	
 	if(!hit) {
 		move_and_collide(velh, velv, [obj_wall, obj_border_limit]);
 	}
 	
-	var dist = point_distance(x, y, obj_player.x, obj_player.y);
-	
 	if(dist >= release_dist) {
 		state = scr_yuzan_choose_state;
 	}
+	
+	//if(dist <= 10) {
+	//	image_index = 0;
+	//	state = scr_yuzan_state_attacking;
+	//}
 }
 
 function scr_yuzan_state_dead() {
@@ -90,4 +99,18 @@ function scr_yuzan_state_dead() {
 	}
 	
 	move_and_collide(velh, velv, [obj_wall, obj_border_limit]);
+}
+
+function scr_yuzan_state_attacking() {
+	debug_state = "Attacking";
+	
+	sprite_index = spr_yuzan_attacking_front;
+	
+	velh = 0;
+	velv = 0;
+	
+	if(image_index >= sprite_get_number(sprite_index)-1) {
+		image_index = sprite_get_number(sprite_index)-1;
+		state = scr_yuzan_choose_state;
+	}
 }

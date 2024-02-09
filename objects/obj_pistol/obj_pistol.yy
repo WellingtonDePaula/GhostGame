@@ -38,6 +38,9 @@
     "name": "spr_pistol",
     "path": "sprites/spr_pistol/spr_pistol.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_pistol",
+    "path": "sprites/spr_pistol/spr_pistol.yy",
+  },
   "visible": true,
 }

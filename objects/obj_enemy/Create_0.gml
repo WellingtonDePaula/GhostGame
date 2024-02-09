@@ -5,3 +5,4 @@ release_dist = 100;
 collision_mask = -1;
 enemy_x = 0;
 enemy_y = 0;
+hit_delay = 5;

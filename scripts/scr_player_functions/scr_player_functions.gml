@@ -23,8 +23,9 @@ function scr_player_fix_sprites() {
 		if(dir <= 360 && dir > 180) {
 			sprite_index = spr_player_idle_front;
 		}
-		
 	}
+	
+	
 	if(velh != 0 || velv != 0) {
 		if(dir > 0 && dir < 180) {
 			sprite_index = spr_player_moving_back;

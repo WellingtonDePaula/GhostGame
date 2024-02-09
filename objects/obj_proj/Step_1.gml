@@ -3,15 +3,17 @@ depth = -y;
 var col = instance_place(x, y, obj_enemy);
 
 if(col && col.dead) {
-	audio_play_sound(s_hit, 1, false);
-	speed = 0;
-	col.hit = true;
-	col.alarm[1] = col.hit_delay;
-	col.alpha = 1;
-	col.velh = lengthdir_x(len, direction);
-	col.velv = lengthdir_y(len, direction);
-	col.alarm[2] = kb_dis;
-	instance_destroy();
+	if(!col.hit) {
+		audio_play_sound(s_hit, 1, false, 1, 0, random_range(0.8, 1.2));
+		speed = 0;
+		col.hit = true;
+		col.alarm[1] = col.hit_delay;
+		col.alpha = 1;
+		col.velh = lengthdir_x(len, direction);
+		col.velv = lengthdir_y(len, direction);
+		col.alarm[2] = kb_dis;
+		instance_destroy();
+	}
 }
 if(!global.pause) {
 	if(instance_place(x, y, [obj_wall, obj_border_limit])) {

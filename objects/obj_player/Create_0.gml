@@ -6,7 +6,7 @@ state = scr_player_state_free;
 
 ghost = obj_player_ghost;
 
-vel = 1.5;
+vel = 1;
 move_dir = 0;
 
 right = 0;
@@ -26,10 +26,11 @@ inputs = {
 	left_mouse: mb_left,
 	shift: vk_shift,
 	e: ord("E"),
+	f: ord("F"),
 }
 
 //variáveis da arma do player
-my_weapon = -1;
+my_weapon = noone;
 my_weapon = instance_create_layer(x, y, "Guns", obj_pistol);
 my_weapon.weapon_id = self;
 global.can_shoot = true;
@@ -56,3 +57,9 @@ y_contagem_balas =  display_get_gui_height() - 25;
 
 //variaveis para puxar objetos
 d_range = 8;
+
+//variaveis do ataque físico
+attacking = false;
+can_attack = true;
+go_dir = -1;
+stroke_intensity = 40;

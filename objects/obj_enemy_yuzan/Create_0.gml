@@ -3,7 +3,7 @@ event_inherited();
 state = scr_yuzan_choose_state;
 prox_state = -1;
 
-vel = 1;
+vel = .8;
 dest_x = 0;
 dest_y = 0;
 

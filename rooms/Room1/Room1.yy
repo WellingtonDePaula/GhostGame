@@ -8,7 +8,6 @@
   "inheritLayers": false,
   "instanceCreationOrder": [
     {"name":"inst_1325EE2D","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_21DBB11","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_4B3B9733","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_56DACF9F","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_25552DF1","path":"rooms/Room1/Room1.yy",},
@@ -19,6 +18,7 @@
     {"name":"inst_AACBCE9","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_43B91140","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_5E07C90F","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_2D91BFC2","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -42,8 +42,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5E07C90F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_border_limit","path":"objects/obj_border_limit/obj_border_limit.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":256.0,"y":224.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Misc","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_21DBB11","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":64.0,"y":64.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_BDED1D6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_main","path":"objects/obj_main/obj_main.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":64.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2D91BFC2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":64.0,"y":64.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Wals","depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":44,"SerialiseWidth":34,"TileCompressedData":[
 -680,0,-816,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"t_forest_cliff","path":"tilesets/t_forest_cliff/t_forest_cliff.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

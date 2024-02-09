@@ -11,3 +11,6 @@ weapon_recoil_rotate_tol = 1;
 weapon_recoil_rotate_frac = .2;
 ammo = 100;
 recoil_force = 20;
+dir_x_y = 0;
+len_x = 6;
+len_y = 0;
